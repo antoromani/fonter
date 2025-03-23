@@ -1,0 +1,6 @@
+# Ignorar la carpeta target de Tauri
+/src-tauri/target/
+
+# Ignorar archivos generados
+*.log
+*.tmp
