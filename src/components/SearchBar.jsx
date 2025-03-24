@@ -1,22 +1,23 @@
-import { useState, useEffect } from 'react';
-import { invoke } from '@tauri-apps/api';
+import React, { useState } from 'react';
 
-function SearchBar() {
-    const [fuentes, setFuentes] = useState([]);
+function SearchBar({ onSearch }) {
+    const [query, setQuery] = useState('');
 
-    useEffect(() => {
-        invoke('listar_fuentes').then((fuentes) => setFuentes(fuentes));
-    }, []);
+    const handleSearch = (e) => {
+        e.preventDefault();
+        onSearch(query);
+    };
 
     return (
-        <div>
-            <input type="text" placeholder="Buscar fuentes..." />
-            <ul>
-                {fuentes.map((fuente, index) => (
-                    <li key={index}>{fuente}</li>
-                ))}
-            </ul>
-        </div>
+        <form onSubmit={handleSearch}>
+            <input
+                type="text"
+                placeholder="Buscar fuentes..."
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+            />
+            <button type="submit">Buscar</button>
+        </form>
     );
 }
 
