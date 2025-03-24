@@ -1,46 +1,49 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-import './styles.css';
+import { invoke } from '@tauri-apps/api';
+import { useState, useEffect } from 'react';
+import SearchBar from './components/SearchBar';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+function App() {
+  const [fuentes, setFuentes] = useState([]);
+  const [filtro, setFiltro] = useState('');
 
-function FontList() {
-    const [fonts, setFonts] = useState([]);
+  useEffect(() => {
+    invoke('get_system_fonts').then((data) => {
+      const fuentesArray = Object.entries(data).map(([familia, variantes]) => ({
+        familia,
+        variantes
+      }));
+      setFuentes(fuentesArray);
+    });
+  }, []);
 
-    useEffect(() => {
-        invoke('get_system_fonts').then((data) => {
-            const fontsArray = Object.entries(data).map(([family, variants]) => ({
-                family,
-                variants
-            }));
-            setFonts(fontsArray);
-        });
-    }, []);
+  const fuentesFiltradas = fuentes.filter(fuente => 
+    fuente.familia.toLowerCase().includes(filtro.toLowerCase())
+  );
 
-    return (
-        <div>
-            {fonts.map((font, index) => (
-                <div key={index}>
-                    <h3>{font.family}</h3>
-                    {font.variants.map((variant, i) => (
-                        <p 
-                            key={i} 
-                            style={{ 
-                                fontFamily: `'${font.family}'`,
-                                fontWeight: variant.weight,
-                                fontStyle: variant.is_italic ? "italic" : "normal",
-                            }}
-                        >
-                            Ejemplo: {variant.style_name} (Peso: {variant.weight}, {variant.is_italic ? "Itálico" : "Normal"})
-                        </p>
-                    ))}
-                </div>
+  return (
+    <div className="app">
+      <SearchBar onSearch={setFiltro} />
+      <div className="lista-fuentes">
+        {fuentesFiltradas.map(({ familia, variantes }) => (
+          <div key={familia} className="familia-fuente">
+            <h3>{familia}</h3>
+            {variantes.map((variante) => (
+              <p 
+                key={variante.style_name}
+                style={{
+                  fontFamily: `'${familia}'`,
+                  fontWeight: variante.weight,
+                  fontStyle: variante.is_italic ? 'italic' : 'normal'
+                }}
+              >
+                {variante.style_name} - Peso: {variante.weight}
+              </p>
             ))}
-        </div>
-    );
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }
+
+export default App;
