@@ -1,0 +1,12 @@
+:root {
+  --color-primary: #1d4ed8; /* Azul */
+  --color-secondary: #6b7280; /* Gris */
+  --color-background: #ffffff;
+  --color-text: #000000;
+  font-family: Verdana, sans-serif;
+}
+
+.dark {
+  --color-background: #1f2937;
+  --color-text: #ffffff;
+}

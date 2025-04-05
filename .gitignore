@@ -1,0 +1,45 @@
+# 1. DEPENDENCIAS
+/node_modules/       # Todas las dependencias de npm (¡muy pesadas!)
+/.pnpm-store/       # Almacén de pnpm (si lo usas)
+/.yarn/             # Cache de Yarn
+/.pnp.*             # Archivos de PnP (Yarn)
+
+# 2. BUILD/ARTEFACTOS
+/dist/              # Carpeta de build de Vite (frontend)
+/dist-ssr/          # Build para SSR (no aplica a Tauri)
+/src-tauri/target/  # Builds de Rust (+500MB ⚠️)
+/release/           # Ejecutables finales (.exe, .dmg)
+*.local             # Archivos locales de configuración
+
+# 3. RUST/TAURI ESPECÍFICO
+Cargo.lock          # Similar a package-lock.json pero de Rust
+/src-tauri/bin/     # Binarios generados
+/src-tauri/icons/   # Iconos temporales
+*.dmg               # Instaladores macOS
+*.AppImage          # Instaladores Linux
+*.deb               # Paquetes Debian
+*.msi               # Instaladores Windows
+
+# 4. LOGS Y TEMPORALES
+*.log               # Todos los archivos de log
+npm-debug.log*      # Logs de errores de npm
+yarn-debug.log*     # Logs de errores de Yarn
+yarn-error.log*     
+pnpm-debug.log*     # Logs de pnpm
+lerna-debug.log*    # Logs de Lerna
+.DS_Store           # Archivos temporales de macOS
+Thumbs.db           # Archivos temporales de Windows
+
+# 5. EDITOR/IDE
+.vscode/*           # Configuraciones de VS Code
+!.vscode/extensions.json # Excepto extensions.json
+.idea/              # Configuraciones de JetBrains
+*.suo               # Archivos de usuario de VS
+*.ntvs*             # Config de Node Tools para VS
+*.njsproj           # Proyectos Node.js para VS
+*.sln               # Soluciones de Visual Studio
+*.sw?               # Archivos swap de Vim
+
+# 6. ENTORNO/VARIABLES
+.env                # Variables de entorno (¡nunca subir!)
+.env*.local         # Variables locales

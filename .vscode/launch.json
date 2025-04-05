@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",  // Cambia temporalmente a "node"
+      "request": "launch",
+      "name": "Debug Tauri App",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "tauri", "dev"],
+      "console": "integratedTerminal"
+    }
+  ]
+}
