@@ -1,79 +1,43 @@
 import React from "react";
 import Icon from "./Icon";
+import menuItems, { MenuItem } from "./menuItems.ts";
 import { useTranslation } from "react-i18next";
+import "../styles/components.css";
+import "../styles/layout.css";
 
 const Sidebar: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <aside className="w-64 bg-[var(--color-background)] text-[var(--color-text)]">
-      <div className="p-4">
-        <img
-          src="/assets/images/logo-fonter.svg"
-          alt="Fonter Logo"
-          className="w-32 mx-auto"
-        />
+    <aside className="sidebar">
+      <div className="sidebar-logo">
+        <div className="logo-circle">
+          <img
+            src="/assets/images/logo-fonter.svg"
+            alt="Fonter Logo"
+            className="logo-image"
+          />
+        </div>
       </div>
-      <nav className="mt-4">
-        <ul className="space-y-2">
-          <li className="flex items-center hover:text-[var(--color-primary)]">
-            <Icon name="Type" className="w-6 h-6 mr-2" ariaLabel="Type" />
-            <span>Type</span>
-          </li>
-          <li className="flex items-center hover:text-[var(--color-primary)]">
-            <Icon
-              name="system-font"
-              className="w-6 h-6 mr-2"
-              ariaLabel="System Font"
-            />
-            <span>System Font</span>
-          </li>
-          <li className="flex items-center hover:text-[var(--color-primary)]">
-            <Icon name="google" className="w-6 h-6 mr-2" ariaLabel="Google" />
-            <span>Google</span>
-          </li>
-          <li className="flex items-center justify-between hover:text-[var(--color-primary)]">
-            <div className="flex items-center">
+      <nav className="sidebar-nav">
+        <ul className="menu-list">
+          {menuItems.map((item: MenuItem) => (
+            <li key={item.name} className="menu-item">
               <Icon
-                name="folder"
-                className="w-6 h-6 mr-2"
-                ariaLabel={t("folder")}
+                name={item.icon}
+                className="menu-icon"
+                ariaLabel={t(item.name)}
               />
-              <span>{t("folder")}</span>
-            </div>
-            <Icon name="plus" className="w-4 h-4" ariaLabel="Add Folder" />
-          </li>
-          <li className="flex items-center justify-between hover:text-[var(--color-primary)]">
-            <div className="flex items-center">
-              <Icon
-                name="collection"
-                className="w-6 h-6 mr-2"
-                ariaLabel={t("collection")}
-              />
-              <span>{t("collection")}</span>
-            </div>
-            <Icon name="plus" className="w-4 h-4" ariaLabel="Add Collection" />
-          </li>
-          <li className="flex items-center hover:text-[var(--color-primary)]">
-            <Icon name="heart" className="w-6 h-6 mr-2" ariaLabel="Favorites" />
-            <span>Favorites</span>
-          </li>
-          <li className="flex items-center hover:text-[var(--color-primary)]">
-            <Icon
-              name="settings"
-              className="w-6 h-6 mr-2"
-              ariaLabel={t("settings")}
-            />
-            <span>{t("settings")}</span>
-          </li>
-          <li className="flex items-center hover:text-[var(--color-primary)]">
-            <Icon
-              name="share"
-              className="w-6 h-6 mr-2"
-              ariaLabel={t("share")}
-            />
-            <span>{t("share")}</span>
-          </li>
+              <span>{t(item.name)}</span>
+              {item.hasAction && (
+                <Icon
+                  name="plus"
+                  className="action-icon"
+                  ariaLabel={t(item.hasAction)}
+                />
+              )}
+            </li>
+          ))}
         </ul>
       </nav>
     </aside>

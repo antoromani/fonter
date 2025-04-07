@@ -1,0 +1,57 @@
+/* Contenedor principal */
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Barra lateral */
+.sidebar {
+  width: var(--sidebar-width);
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: var(--background-color);
+  border-right: 1px solid var(--border-color);
+  transition: width var(--transition-speed) ease;
+}
+
+/* Contenido principal */
+.main-content {
+  margin-left: var(--sidebar-width);
+  padding: var(--spacing-lg);
+  flex: 1;
+}
+
+/* Grid layouts */
+.grid {
+  display: grid;
+  gap: var(--spacing-md);
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid-cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.grid-cols-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Contenedor flexible */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}

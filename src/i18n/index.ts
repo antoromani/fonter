@@ -1,29 +1,13 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
-
-const resources = {
-  en: {
-    translation: {
-      folder: "Folder",
-      collection: "Collection",
-      settings: "Settings",
-      share: "Share",
-      // ...otros textos
-    },
-  },
-  es: {
-    translation: {
-      folder: "Carpeta",
-      collection: "Colección",
-      settings: "Configuración",
-      share: "Compartir",
-      // ...otros textos
-    },
-  },
-};
+import en from "../locales/en.json";
+import es from "../locales/es.json";
 
 i18n.use(initReactI18next).init({
-  resources,
+  resources: {
+    en: { translation: en },
+    es: { translation: es },
+  },
   lng: "es",
   fallbackLng: "en",
   interpolation: {
