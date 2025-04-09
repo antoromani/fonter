@@ -1,88 +1,109 @@
-<svg width="0" height="0" class="hidden"> 
+<svg width="0" height="0" class="hidden">
   <symbol xmlns="http://www.w3.org/2000/svg" id="apple" viewBox="0 0 24 24">
+    <defs></defs>
     <path d="M15.58 2.06s-1.41-.05-2.91 1.47-.82 3.49-.82 3.49 1.5-.12 3.01-1.87c1.31-1.52.72-3.09.72-3.09Z"></path>
     <path d="M8.9 21.93c1.28 0 1.84-.88 3.6-.88s2.38 1.18 3.81.8c2.65-.72 4.19-5.3 4.19-5.3s-2.28-.78-2.76-3.61c-.44-2.58 2.28-4.36 2.28-4.36s-1.73-2.03-3.68-1.99-3.68 1.33-5.5.64c-1.81-.69-3.49-1.16-6.06 1.39-2.69 2.67-.54 9.57 1.39 11.57s2.74 1.75 2.74 1.75Z"></path>
+  </symbol>    
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="arrow-left">
+    <path d="M9.01 5.39 2.4 12l6.61 6.61M2.4 12h19.2"></path>
+  </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="arrow-left2">
+    <path d="M12.66 4.4 5.06 12l7.6 7.6"></path>
+    <path d="m18.95 4.4-7.6 7.6 7.6 7.6"></path>
   </symbol>
   <symbol xmlns="http://www.w3.org/2000/svg" id="camera" viewBox="0 0 24 24">
+    <defs></defs>
     <path d="M4.49 6.18a2.58 2.58 0 0 0-2.58 2.58v8.65a2.58 2.58 0 0 0 2.58 2.58h15.02a2.58 2.58 0 0 0 2.58-2.58V8.76a2.58 2.58 0 0 0-2.58-2.58h-.98l-1.07-2.17h-5.74l-1.07 2.17H7.57v-.93H4.48v.93Z"></path>
     <circle cx="14.26" cy="13.09" r="4.67"></circle>
     <circle cx="4.54" cy="8.76" r=".42"></circle>
   </symbol>
   <symbol xmlns="http://www.w3.org/2000/svg" id="collection" viewBox="0 0 24 24">
+    <defs></defs>
     <path d="m9.68 10.31 2.74 2.73 5.6-5.6"></path>
     <rect width="14.98" height="14.98" x="6.07" y="2.95" rx="2" ry="2"></rect>
     <path d="M17.03 20.72c-.32.21-.69.33-1.1.33H4.95c-1.1 0-2-.9-2-2V8.07c0-.33.08-.64.22-.91"></path>
   </symbol>
   <symbol xmlns="http://www.w3.org/2000/svg" id="compare" viewBox="0 0 24 24">
+    <defs></defs>
     <path d="M19.94 12c0-3.97-3.27-7.95-7.95-7.95h-2M4.09 12c0 3.97 3.27 7.95 7.95 7.95h2"></path>
     <path d="M12.27 6.33 10 4.06l2.27-2.27M11.76 17.67l2.27 2.27-2.27 2.27M8.82 8.28 5.48 2.23 2.15 8.28M21.9 18.7c0-1.43-1.28-3.2-2.85-3.2s-2.85 1.43-2.85 3.2 1.28 3.2 2.85 3.2 2.85-1.74 2.85-3.2ZM21.9 15.61v6.19M7.89 6.59H3.07"></path>
   </symbol>
   <symbol xmlns="http://www.w3.org/2000/svg" id="computer" viewBox="0 0 24 24">
+    <defs></defs>
     <path d="M2.42 15.24h19.15"></path>
     <rect width="19.15" height="14.66" x="2.42" y="2.98" rx="2" ry="2"></rect>
     <path d="M7.11 21.02h9.77M9.54 17.64l-.26 3.38M14.46 17.64l.26 3.38"></path>
   </symbol>
-  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="download">
+  <symbol xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" id="download">
     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"></path>
   </symbol>
-  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="folder">
+  <symbol xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" id="folder">
     <path d="m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2"></path>
   </symbol>
   <symbol xmlns="http://www.w3.org/2000/svg" id="font-file" viewBox="0 0 24 24">
+    <defs></defs>
     <path d="M5 22h14c1.1 0 2-.9 2-2V7l-5-5H7c-1.1 0-2 .9-2 2v4"></path>
     <path d="M15 2v4c0 1.1.9 2 2 2h4M3 12.64v-1.18h7.07v1.18M6.53 11.47v7.07M5.36 18.53h2.36"></path>
   </symbol>
-  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="funnel">
+  <symbol xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" id="funnel">
     <path d="M10 20a1 1 0 0 0 .553.895l2 1A1 1 0 0 0 14 21v-7a2 2 0 0 1 .517-1.341L21.74 4.67A1 1 0 0 0 21 3H3a1 1 0 0 0-.742 1.67l7.225 7.989A2 2 0 0 1 10 14z"></path>
   </symbol>
   <symbol xmlns="http://www.w3.org/2000/svg" id="google" viewBox="0 0 24 24">
+    <defs></defs>
     <path d="m3.22 7.43 2.94 1.98M15.65 17.24c.04.07 2.51 2.5 2.51 2.5M6.17 14.61l-3 1.87"></path>
     <path d="M18.13 13.81A6.39 6.39 0 0 1 12 18.39c-3.53 0-6.39-2.86-6.39-6.39S8.47 5.61 12 5.61c1.37 0 2.64.44 3.68 1.17l2.46-2.54A9.897 9.897 0 0 0 2.1 12c0 5.47 4.43 9.9 9.9 9.9s9.9-4.43 9.9-9.9c0-.54-.05-1.07-.14-1.58h-9.64v3.4h6.01Z"></path>
   </symbol>
-  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="grid">
+  <symbol xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" id="grid">
     <path d="M12 3v18M3 12h18"></path>
     <rect width="18" height="18" x="3" y="3" rx="2"></rect>
   </symbol>
-  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="hard-drive">
+  <symbol xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" id="hard-drive">
     <path d="M22 12H2M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11zM6 16h.01M10 16h.01"></path>
   </symbol>
-  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="heart">
+  <symbol xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" id="heart">
     <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
   </symbol>
   <symbol xmlns="http://www.w3.org/2000/svg" id="order" viewBox="0 0 24 24">
+    <defs></defs>
     <path d="M8.86 4.9H21.9M8.86 9.87H21.9M8.86 14.84H21.9M8.61 19.81h13.05M4.15 8.9V2.1M2.05 4.57l2.1-2.47 2.11 2.47M4.15 15.1v6.8M6.26 19.43 4.15 21.9l-2.1-2.47"></path>
   </symbol>
   <symbol xmlns="http://www.w3.org/2000/svg" id="photo" viewBox="0 0 24 24">
+    <defs></defs>
     <path d="M2.5 16.09s4.9-4.72 7.44-2.36 4.57-1.78 6.43-2.84 3.66.87 5.13 4.12"></path>
     <circle cx="9.13" cy="7.53" r="2.03"></circle>
     <rect width="19" height="19" x="2.5" y="2.5" rx="4.5" ry="4.5"></rect>
   </symbol>
-  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="rows">
+  <symbol xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" id="rows">
     <rect width="18" height="18" x="3" y="3" rx="2"></rect>
     <path d="M21 7.5H3M21 12H3M21 16.5H3"></path>
   </symbol>
   <symbol xmlns="http://www.w3.org/2000/svg" id="reset" viewBox="0 0 24 24">
+    <defs></defs>
     <path d="m10.94 17.98 2.37 1.93-2.16 2.16"></path>
     <path d="M17.78 17.92a9.02 9.02 0 0 0 3.26-6.95c0-4.99-4.04-9.03-9.03-9.03s-9.04 4.04-9.04 9.03a9.026 9.026 0 0 0 10.35 8.93"></path>
   </symbol>
   <symbol xmlns="http://www.w3.org/2000/svg" id="search" viewBox="0 0 24 24">
+    <defs></defs>
     <circle cx="10.93" cy="9.77" r="6.56"></circle>
     <path d="m14.76 15.1 4.87 5.69"></path>
   </symbol>
   <symbol xmlns="http://www.w3.org/2000/svg" id="settings" version="1.1" viewBox="0 0 24 24">
+    <defs></defs>
     <path d="M9.4 3.1c0-.6.6-1 1.2-1h2.9c.6 0 1.1.4 1.2 1l.2 1.4c0 .4.3.8.7 1 0 0 .2 0 .2.1.4.2.8.3 1.2.1l1.3-.5c.6-.2 1.2 0 1.5.5l1.4 2.5c.3.5.2 1.2-.3 1.6l-1.1.9c-.3.3-.5.7-.5 1.1v.3c0 .4.2.8.5 1.1l1.1.9c.5.4.6 1.1.3 1.6l-1.4 2.5c-.3.5-.9.8-1.5.5l-1.3-.5c-.4-.1-.8 0-1.2.1 0 0-.2 0-.2.1-.4.2-.6.5-.7 1l-.2 1.4c0 .6-.6 1-1.2 1h-2.9c-.6 0-1.1-.4-1.2-1l-.2-1.4c0-.4-.3-.8-.7-1 0 0-.2 0-.2-.1-.4-.2-.8-.3-1.2-.1l-1.3.5c-.6.2-1.2 0-1.5-.5l-1.4-2.5c-.3-.5-.2-1.2.3-1.6l1.1-.9c.3-.3.5-.7.5-1.1v-.3c0-.4-.2-.8-.5-1.1l-1.1-.9c-.5-.4-.6-1-.3-1.6l1.4-2.5c.3-.5.9-.8 1.5-.5l1.3.5c.4.1.8 0 1.2-.1 0 0 .2 0 .2-.1.4-.2.6-.5.7-1l.2-1.4h0Z"></path>
     <path d="M15.3 12c0 1.8-1.5 3.3-3.3 3.3S8.7 13.8 8.7 12s1.5-3.3 3.3-3.3 3.3 1.5 3.3 3.3Z"></path>
   </symbol>
-  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="share">
+  <symbol xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" id="share">
     <circle cx="18" cy="5" r="3"></circle>
     <circle cx="6" cy="12" r="3"></circle>
     <circle cx="18" cy="19" r="3"></circle>
     <path d="m8.59 13.51 6.83 3.98M15.41 6.51l-6.82 3.98"></path>
   </symbol>
   <symbol xmlns="http://www.w3.org/2000/svg" id="system-font" viewBox="0 0 24 24">
+    <defs></defs>
     <path d="M12 17.35v4M22 11.1v4.25c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2v-10c0-1.1.9-2 2-2h7M8 21.35h8M14.47 3.99V2.81h7.07v1.18M18 2.82v7.07M16.82 9.88h2.36"></path>
   </symbol>
   <symbol xmlns="http://www.w3.org/2000/svg" id="tag" viewBox="0 0 24 24">
+    <defs></defs>
     <path d="M21.15 10.14c0 .58-.33 1.39-.74 1.8l-9.11 9.11c-.41.41-1.08.41-1.49 0L2.6 13.84c-.41-.41-.41-1.08 0-1.49l9.11-9.11c.41-.41 1.22-.74 1.8-.74h6.59c.58 0 1.05.47 1.05 1.05v6.59Z"></path>
     <path d="M18.33 5.07c-.35-.35-.92-.35-1.27 0s-.35.92 0 1.27.92.35 1.27 0 .35-.92 0-1.27"></path>
   </symbol>
@@ -93,13 +114,16 @@
     <path d="M8.08 20.94V20c1.57-.09 1.8-1.26 1.72-2.63V4.74c-2.45-.45-4.53.99-4.83 3.33H3.02V3.06h17.97v5h-1.95c-.39-2.48-2.35-3.72-4.82-3.33v12.63c-.08 1.41.17 2.54 1.72 2.63v.94H8.08Z"></path>
   </symbol>
   <symbol xmlns="http://www.w3.org/2000/svg" id="type-low-upp" viewBox="0 0 24 24">
+    <defs></defs>
     <path d="M10.18 19.19c0 1-.81 1.81-1.81 1.81H6.64c-1 0-1.81-.81-1.81-1.81V8.64M8.67 5.02V2.98h12.26v2.04M14.8 2.98v12.26M12.75 15.24h4.09M2.99 12.47h5.79"></path>
   </symbol>
   <symbol xmlns="http://www.w3.org/2000/svg" id="user" viewBox="0 0 24 24">
+    <defs></defs>
     <circle cx="12" cy="8.02" r="5"></circle>
     <path d="M4.04 20.98c0-4.4 3.56-7.96 7.96-7.96s7.96 3.56 7.96 7.96"></path>
   </symbol>
   <symbol xmlns="http://www.w3.org/2000/svg" id="windows" viewBox="0 0 24 24">
+    <defs></defs>
     <rect width="7.8" height="7.8" x="2.5" y="2.5" rx="1" ry="1"></rect>
     <rect width="7.8" height="7.8" x="13.7" y="2.5" rx="1" ry="1"></rect>
     <rect width="7.8" height="7.8" x="13.7" y="13.7" rx="1" ry="1"></rect>

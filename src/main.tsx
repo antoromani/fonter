@@ -2,14 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 
-// Importar estilos en orden de especificidad
-import "./styles/globals.css";
-import "./styles/layout.css";
-import "./styles/components.css";
-import "./styles/themes/default.css";
-import "./styles/themes/minimalist.css";
+// Import único para CSS - mejora la carga
+import "./styles/index.css";
 
-import { initializeTheme } from "./hooks/themeManager";
+import { initializeTheme } from "./config/theme/themeManager";
 import { I18nextProvider } from "react-i18next";
 import i18n from "./i18n";
 

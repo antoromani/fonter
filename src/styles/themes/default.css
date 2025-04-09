@@ -5,21 +5,84 @@
   --secondary-color: #4a4a49;
   --background-color: #e6e6e6;
   --text-color: #222222;
+  --text-color-secondary: #666666;
+  --link-color: #1d4ed8;
+  --link-hover-color: #1e40af;
+  --border-color: #d1d5db;
+  --border-color-light: #e5e7eb;
+
+  /* Fondos y tarjetas */
+  --background-color-light: #f3f4f6;
+  --card-background: transparent;
+  --input-bg-color: #ffffff;
 
   /* Elementos específicos */
   --sidebar-bg: var(--background-color);
   --menu-item-hover: rgba(0, 0, 0, 0.05);
   --menu-item-active: rgba(29, 78, 216, 0.1);
+  --button-active-bg: rgba(0, 0, 0, 0.05);
+  --text-on-primary: #ffffff;
 
   /* Sombras */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-sm: none;
+  --shadow-md: none;
+
+  /* Bordes redondeados */
+  --border-radius: 0.5rem;
+  --border-radius-sm: 0.25rem;
 }
 
+/* Clases específicas del tema */
+
+/* Iconos del menú - usados en Sidebar.tsx */
 .menu-icon {
-  width: 1.2rem;
-  height: 1.2;
+  width: var(--icon-size);
+  height: var(--icon-size);
   stroke: var(--primary-color);
-  stroke-width: 1px;
-  fill: none;
+}
+
+/* Tarjetas de fuentes - usadas en FontCard.tsx */
+[data-theme="default"] .font-card {
+  border: 1px solid var(--border-color-light);
+  box-shadow: none;
+  transition: transform 0.2s ease;
+  background-color: transparent;
+}
+
+[data-theme="default"] .font-card:hover {
+  transform: translateY(-0.125rem);
+  border-color: var(--primary-color);
+}
+
+/* Botones de control - usados en FontControls.tsx */
+[data-theme="default"] .control-button {
+  background-color: transparent;
+  border: none;
+}
+
+[data-theme="default"] .control-button:hover {
+  background-color: transparent;
+  color: var(--primary-color);
+}
+
+/* Pestañas de fuentes - usadas en FontTabs.tsx */
+[data-theme="default"] .tab-button {
+  background: transparent;
+  border: none;
+}
+
+[data-theme="default"] .tab-button.active {
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
+}
+
+/* Panel de configuración - usado en SettingsPanel.tsx */
+[data-theme="default"] .theme-option {
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+}
+
+[data-theme="default"] .theme-option.active {
+  background-color: var(--primary-color);
+  color: var(--text-on-primary);
 }

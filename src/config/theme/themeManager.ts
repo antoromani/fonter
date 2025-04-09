@@ -1,10 +1,12 @@
+// Utilidades para temas
 const VALID_THEMES = ["default", "minimalist"] as const;
 type ThemeType = (typeof VALID_THEMES)[number];
 
 const VALID_MODES = ["light", "dark"] as const;
 type ModeType = (typeof VALID_MODES)[number];
 
-export function setTheme(theme: string, mode: string) {
+// Función para aplicar el tema y modo al documento
+export function applyTheme(theme: string, mode: string) {
   const validatedTheme = VALID_THEMES.includes(theme as ThemeType)
     ? theme
     : "default";
@@ -20,8 +22,13 @@ export function setTheme(theme: string, mode: string) {
 
 export function initializeTheme() {
   const savedTheme = localStorage.getItem("theme") || "default";
-  const savedMode = localStorage.getItem("mode") || "light";
-  setTheme(savedTheme, savedMode);
+  const savedMode =
+    localStorage.getItem("mode") ||
+    (window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light");
+
+  applyTheme(savedTheme, savedMode);
 }
 
 export function getCurrentTheme(): { theme: string; mode: string } {

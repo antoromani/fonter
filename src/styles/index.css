@@ -1,0 +1,14 @@
+/* Archivo central de estilos - importa todos los estilos en un solo lugar */
+
+/* Primero los estilos globales y base */
+@import "./globals.css";
+
+/* Luego los estilos de diseño */
+@import "./layout.css";
+
+/* Después los estilos de componentes */
+@import "./components.css";
+
+/* Finalmente los temas */
+@import "./themes/default.css";
+@import "./themes/minimalist.css";

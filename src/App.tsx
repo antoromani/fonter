@@ -1,15 +1,13 @@
-import React from "react";
-import Sidebar from "./components/Sidebar";
+import React, { memo } from "react";
+import MainLayout from "./components/layout/MainLayout";
+import { ThemeProvider } from "./config/theme/ThemeProvider";
 
 const App: React.FC = () => {
   return (
-    <div className="flex h-screen">
-      <Sidebar />
-      <main className="flex-1 bg-gray-100 dark:bg-gray-900">
-        {/* Aquí se renderizará el contenido principal */}
-      </main>
-    </div>
+    <ThemeProvider>
+      <MainLayout />
+    </ThemeProvider>
   );
 };
 
-export default App;
+export default memo(App);

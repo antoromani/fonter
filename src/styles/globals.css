@@ -1,30 +1,36 @@
 /* Variables globales */
 :root {
   /* Tamaños */
-  --menu-icon-size: 24px;
-  --logo-size: 48px;
   --font-size-base: 16px;
+  --icon-size: 1.2rem;
+  --menu-icon-size: 1.5rem;
+  --logo-size: 3rem;
   --sidebar-width: 15rem;
 
   /* Espaciado */
-  --spacing-xs: 4px;
-  --spacing-sm: 8px;
-  --spacing-md: 16px;
-  --spacing-lg: 24px;
-  --spacing-xl: 32px;
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
 
-  /* Colores base */
+  /* Colores base - Modo claro */
   --primary-color: #1d4ed8;
   --secondary-color: #4b5563;
   --background-color: #e6e6e6;
   --background-color2: #ffffff;
   --text-color: #242424;
+  --text-color-secondary: #666666;
   --border-color: #e5e7eb;
+  --border-color-light: #eeeeee;
   --link-color: #646cff;
   --link-hover-color: #535bf2;
+  --button-bg: transparent;
+  --button-active-bg: rgba(0, 0, 0, 0.05);
+  --card-background: transparent;
 
   /* Otros */
-  --border-radius: 8px;
+  --border-radius: 0.5rem;
   --transition-speed: 0.3s;
 
   /* Tipografía */
@@ -34,6 +40,22 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+/* Modo oscuro con data-mode */
+[data-mode="dark"] {
+  --primary-color: #4f8df0;
+  --secondary-color: #9ca3af;
+  --background-color: #1a1a1a;
+  --background-color2: #2a2a2a;
+  --text-color: #f6f6f6;
+  --text-color-secondary: #a0a0a0;
+  --border-color: #3d3d3d;
+  --border-color-light: #444444;
+  --link-color: #818cf8;
+  --link-hover-color: #a5b4fc;
+  --button-active-bg: rgba(255, 255, 255, 0.1);
+  --card-background: rgba(42, 42, 42, 0.5);
 }
 
 /* Reset básico */
@@ -61,15 +83,48 @@ a:hover {
   color: var(--link-hover-color);
 }
 
-h1 {
-  text-align: center;
+/* Estilos globales para botones e iconos */
+button {
+  background-color: transparent;
+  border: none;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
 }
 
-/* Tema oscuro */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text-color: #f6f6f6;
-    --background-color: #2f2f2f;
-    --link-hover-color: #24c8db;
-  }
+button:hover {
+  opacity: 0.8;
+}
+
+.icon {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  stroke-width: 1px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+/* Estilos para el panel de configuración */
+.settings-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.back-button {
+  background: transparent;
+  border: none;
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.back-icon {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  stroke: var(--primary-color);
+  stroke-width: 1px;
 }

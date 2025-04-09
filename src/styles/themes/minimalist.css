@@ -5,14 +5,152 @@
   --secondary-color: #666666;
   --background-color: #f5f5f5;
   --text-color: #333333;
+  --text-color-secondary: #999999;
+  --link-color: #333333;
+  --link-hover-color: #000000;
   --border-color: #dddddd;
+  --border-color-light: #eeeeee;
+
+  /* Fondos y tarjetas */
+  --background-color-light: #ffffff;
+  --card-background: transparent;
+  --input-bg-color: #ffffff;
 
   /* Elementos específicos */
   --sidebar-bg: #ffffff;
   --menu-item-hover: rgba(0, 0, 0, 0.02);
   --menu-item-active: rgba(51, 51, 51, 0.1);
+  --button-bg: transparent;
+  --button-active-bg: rgba(0, 0, 0, 0.05);
+  --text-on-primary: #ffffff;
 
   /* Sombras */
   --shadow-sm: none;
-  --shadow-md: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: none;
+
+  /* Bordes redondeados */
+  --border-radius: 0.25rem;
+  --border-radius-sm: 0.125rem;
+}
+
+/* Clases específicas del tema */
+
+/* Iconos del menú - usados en Sidebar.tsx */
+[data-theme="minimalist"] .menu-icon {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  stroke: var(--primary-color);
+}
+
+/* Tarjetas de fuentes - usadas en FontCard.tsx */
+[data-theme="minimalist"] .font-card {
+  border: 1px solid var(--border-color-light);
+  box-shadow: none;
+  transition: transform 0.2s ease;
+  background-color: transparent;
+}
+
+[data-theme="minimalist"] .font-card:hover {
+  transform: translateY(-0.125rem);
+  border-color: var(--primary-color);
+}
+
+/* Botones de control - usados en FontControls.tsx */
+[data-theme="minimalist"] .control-button {
+  opacity: 0.7;
+  background-color: transparent;
+  border: none;
+  padding: 0.5rem;
+}
+
+[data-theme="minimalist"] .control-button:hover {
+  opacity: 1;
+  background-color: transparent;
+  color: var(--primary-color);
+}
+
+/* Pestañas de fuentes - usadas en FontTabs.tsx */
+[data-theme="minimalist"] .tab-button {
+  font-weight: normal;
+  border: none;
+  background: transparent;
+  padding: 0.5rem 0.75rem;
+  margin-right: 0.5rem;
+}
+
+[data-theme="minimalist"] .tab-button.active {
+  color: var(--primary-color);
+  border-bottom: 1px solid var(--primary-color);
+  font-weight: 500;
+}
+
+/* Panel de configuración - usado en SettingsPanel.tsx */
+[data-theme="minimalist"] .settings-panel {
+  padding: 1rem;
+}
+
+[data-theme="minimalist"] .settings-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+[data-theme="minimalist"] .back-button {
+  background: transparent;
+  border: none;
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+[data-theme="minimalist"] .back-button svg {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  stroke: var(--primary-color);
+}
+
+[data-theme="minimalist"] .theme-option {
+  background-color: transparent;
+  border: 1px solid var(--border-color-light);
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+[data-theme="minimalist"] .theme-option.active {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+/* Elementos de visualización - usados en StylesTab.tsx, GlyphsTab.tsx, WaterfallTab.tsx */
+[data-theme="minimalist"] .style-preview,
+[data-theme="minimalist"] .glyph,
+[data-theme="minimalist"] .waterfall-text {
+  background-color: transparent;
+  border: 1px solid var(--border-color-light);
+}
+
+/* Botones generales */
+[data-theme="minimalist"] button {
+  background-color: transparent;
+  border: none;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+[data-theme="minimalist"] button:hover {
+  opacity: 0.8;
+}
+
+/* Inputs generales */
+[data-theme="minimalist"] input,
+[data-theme="minimalist"] select {
+  border: 1px solid var(--border-color);
+  background-color: transparent;
+  padding: 0.5rem;
+  border-radius: var(--border-radius-sm);
 }
