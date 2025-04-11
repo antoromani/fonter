@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Tooltip from "../../common/Tooltip";
 import "../../../styles/components.css";
 
 interface WaterfallTabProps {
@@ -12,16 +13,15 @@ const WaterfallTab: React.FC<WaterfallTabProps> = ({ fontId, previewText }) => {
   // Tamaños predefinidos para la cascada
   const sizes = [8, 12, 16, 24, 32, 48, 64];
 
-  const handleTextChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+  const handleTextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setCustomText(e.target.value);
   };
 
   return (
     <div className="waterfall-tab">
-      <h4 className="tab-subtitle">Vista en cascada</h4>
-
       <div className="waterfall-text-input">
-        <textarea
+        <input
+          type="text"
           value={customText}
           onChange={handleTextChange}
           className="custom-text-input"
@@ -32,16 +32,17 @@ const WaterfallTab: React.FC<WaterfallTabProps> = ({ fontId, previewText }) => {
       <div className="waterfall-samples">
         {sizes.map((size) => (
           <div key={`${fontId}-size-${size}`} className="waterfall-item">
-            <span className="size-label">{size}px</span>
-            <div
-              className="waterfall-text"
-              style={{
-                fontFamily: fontId,
-                fontSize: `${size}px`,
-              }}
-            >
-              {customText}
-            </div>
+            <Tooltip content={`${size}px`} positionType="left">
+              <div
+                className="waterfall-text"
+                style={{
+                  fontFamily: fontId,
+                  fontSize: `${size}px`,
+                }}
+              >
+                {customText}
+              </div>
+            </Tooltip>
           </div>
         ))}
       </div>

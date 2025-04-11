@@ -38,11 +38,16 @@ const sampleFonts: Font[] = [
   },
 ];
 
+const DEFAULT_TEXT = "The quick brown fox jumps over the lazy dog.";
+const DEFAULT_FONT_SIZE = 18;
+
 const FontList: React.FC = () => {
   const { t } = useTranslation();
   const [fonts, setFonts] = useState<Font[]>(sampleFonts);
   const [viewMode, setViewMode] = useState<"grid" | "rows">("rows");
   const [searchQuery, setSearchQuery] = useState("");
+  const [exampleText, setExampleText] = useState(DEFAULT_TEXT);
+  const [fontSize, setFontSize] = useState(DEFAULT_FONT_SIZE);
 
   const handleSearch = (query: string) => {
     setSearchQuery(query);
@@ -52,7 +57,8 @@ const FontList: React.FC = () => {
       const filtered = sampleFonts.filter(
         (font) =>
           font.name?.toLowerCase().includes(query.toLowerCase()) ||
-          font.family?.toLowerCase().includes(query.toLowerCase())
+          font.family?.toLowerCase().includes(query.toLowerCase()
+        )
       );
       setFonts(filtered);
     }
@@ -78,8 +84,17 @@ const FontList: React.FC = () => {
   };
 
   const handleReset = () => {
-    // Implementación para resetear ajustes
-    console.log("Resetting settings...");
+    // Resetear el texto de ejemplo y el tamaño de fuente a los valores predeterminados
+    setExampleText(DEFAULT_TEXT);
+    setFontSize(DEFAULT_FONT_SIZE);
+  };
+
+  const handleExampleTextChange = (text: string) => {
+    setExampleText(text);
+  };
+
+  const handleFontSizeChange = (size: number) => {
+    setFontSize(size);
   };
 
   return (
@@ -91,6 +106,10 @@ const FontList: React.FC = () => {
         onOrderChange={handleOrderChange}
         onCompare={handleCompare}
         onReset={handleReset}
+        onExampleTextChange={handleExampleTextChange}
+        onFontSizeChange={handleFontSizeChange}
+        exampleText={exampleText}
+        fontSize={fontSize}
       />
 
       <h1 className="font-list-title">{t("fontLibrary")}</h1>
@@ -101,7 +120,14 @@ const FontList: React.FC = () => {
         }`}
       >
         {fonts.length > 0 ? (
-          fonts.map((font) => <FontCard key={font.id} font={font} />)
+          fonts.map((font) => (
+            <FontCard 
+              key={font.id} 
+              font={font} 
+              customText={exampleText} 
+              fontSize={fontSize} 
+            />
+          ))
         ) : (
           <div className="no-fonts-message">{t("noFontsFound")}</div>
         )}

@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import Icon from "../common/Icon";
 import { useTranslation } from "react-i18next";
 import "../../styles/components.css";
+import Tooltip from "../common/Tooltip";
+
 
 interface FontControlsProps {
   onSearch: (query: string) => void;
@@ -10,6 +12,10 @@ interface FontControlsProps {
   onOrderChange: () => void;
   onCompare: () => void;
   onReset: () => void;
+  onExampleTextChange: (text: string) => void;
+  onFontSizeChange: (size: number) => void;
+  exampleText: string;
+  fontSize: number;
 }
 
 const FontControls: React.FC<FontControlsProps> = ({
@@ -19,24 +25,32 @@ const FontControls: React.FC<FontControlsProps> = ({
   onOrderChange,
   onCompare,
   onReset,
+  onExampleTextChange,
+  onFontSizeChange,
+  exampleText,
+  fontSize,
 }) => {
   const { t } = useTranslation();
   const [searchQuery, setSearchQuery] = React.useState("");
-  const [fontSize, setFontSize] = React.useState(16);
   const [activeView, setActiveView] = React.useState<"grid" | "rows">("rows");
+  const [tooltipVisible, setTooltipVisible] = useState(false);
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value);
     onSearch(e.target.value);
   };
 
-  const handleFontSizeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFontSize(Number(e.target.value));
-  };
-
   const handleViewChange = (view: "grid" | "rows") => {
     setActiveView(view);
     onViewChange(view);
+  };
+
+  const handleExampleTextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    onExampleTextChange(e.target.value);
+  };
+
+  const handleFontSizeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    onFontSizeChange(Number(e.target.value));
   };
 
   return (
@@ -101,15 +115,24 @@ const FontControls: React.FC<FontControlsProps> = ({
       <div className="controls-right">
         <div className="font-size-control">
           <input
-            type="range"
-            min="8"
-            max="72"
-            value={fontSize}
-            onChange={handleFontSizeChange}
-            className="font-size-slider"
-            aria-label={t("adjustFontSize")}
+            type="text"
+            value={exampleText}
+            onChange={handleExampleTextChange}
+            className="custom-text-font-preview"
+            placeholder={t("editExampleText")}
+            aria-label={t("editExampleText")}
           />
-          <span className="font-size-value">{fontSize}px</span>
+          <Tooltip content={`${fontSize}px`} positionType="top">
+            <input
+              type="range"
+              min="8"
+              max="72"
+              value={fontSize}
+              onChange={handleFontSizeChange}
+              className="font-size-slider"
+              aria-label={t("adjustFontSize")}
+            />
+          </Tooltip>
           <button
             className="reset-button"
             onClick={onReset}
@@ -119,6 +142,7 @@ const FontControls: React.FC<FontControlsProps> = ({
           </button>
         </div>
       </div>
+  
     </div>
   );
 };

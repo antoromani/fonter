@@ -91,7 +91,6 @@ const GlyphsTab: React.FC<GlyphsTabProps> = ({ fontId }) => {
 
   return (
     <div className="glyphs-tab">
-      <h4 className="tab-subtitle">Glifos disponibles</h4>
       <div className="glyphs-grid">
         {glyphs.map((glyph, index) => (
           <div key={`${fontId}-glyph-${index}`} className="glyph-item">

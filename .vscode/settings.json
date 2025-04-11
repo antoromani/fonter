@@ -3,5 +3,6 @@
   "editor.formatOnSave": true,
   "rust-analyzer.checkOnSave.command": "clippy",
   "tauri.enable": true,
-  "i18n-ally.localesPaths": ["src/i18n"]
+  "i18n-ally.localesPaths": ["src/i18n"],
+  "npm.packageManager": "pnpm"
 }

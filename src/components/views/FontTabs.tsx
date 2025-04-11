@@ -9,9 +9,10 @@ interface FontTabsProps {
   fontId: string;
   styles: string[];
   previewText: string;
+  glyphs: string[]; // Agregada la propiedad glyphs
 }
 
-const FontTabs: React.FC<FontTabsProps> = ({ fontId, styles, previewText }) => {
+const FontTabs: React.FC<FontTabsProps> = ({ fontId, styles, previewText, glyphs }) => {
   const { t } = useTranslation();
   const [activeTab, setActiveTab] = React.useState<
     "styles" | "glyphs" | "waterfall"
@@ -44,7 +45,7 @@ const FontTabs: React.FC<FontTabsProps> = ({ fontId, styles, previewText }) => {
         {activeTab === "styles" && (
           <StylesTab fontId={fontId} styles={styles} />
         )}
-        {activeTab === "glyphs" && <GlyphsTab fontId={fontId} />}
+        {activeTab === "glyphs" && <GlyphsTab fontId={fontId} glyphs={glyphs} />}
         {activeTab === "waterfall" && (
           <WaterfallTab fontId={fontId} previewText={previewText} />
         )}

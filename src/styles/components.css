@@ -27,7 +27,7 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
-  fill-color: var(--primary-color);
+  fill: var(--primary-color);
 }
 
 /* Navegación */
@@ -178,24 +178,28 @@ button:active {
 
 .font-info {
   display: flex;
-  flex-direction: column;
+  align-items: baseline;
+  gap: 10px;
 }
 
 .font-name {
   margin: 0;
-  font-size: 1.25rem;
-  color: var(--primary-color);
+  font-size: 1.2rem;
 }
 
-.font-family,
 .font-styles-count {
-  font-size: 0.875rem;
-  color: var(--text-color-secondary);
-  margin-top: 0.25rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.font-preview-container {
+  display: flex;
+  align-items: center;
+  margin: var(--spacing-md) 0;
 }
 
 .font-preview {
-  margin: var(--spacing-md) 0;
+  margin: 0;
   padding: var(--spacing-md);
   background-color: transparent;
   border-radius: var(--border-radius);
@@ -203,11 +207,12 @@ button:active {
   min-height: 5rem;
   display: flex;
   align-items: center;
-  font-size: 1.2rem;
+  font-size: 3rem;
   color: var(--text-color);
+  flex: 1;
 }
 
-.toggle-expand-button {
+.toggle-font-preview-tabs {
   background: none;
   border: none;
   cursor: pointer;
@@ -216,12 +221,17 @@ button:active {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2rem;
-  height: 2rem;
+  width: auto;
+  height: auto;
   border-radius: 50%;
   transition: background-color 0.2s ease;
 }
 
+.toggle-font-preview-tabs:hover {
+  background-color: transparent;
+}
+
+/* También actualizamos la clase antigua por si acaso se usa en otro lugar */
 .toggle-expand-button:hover {
   background-color: transparent;
 }
@@ -317,10 +327,16 @@ button:active {
   justify-content: center;
 }
 
+input.custom-text-font-preview {
+  border: none;
+}
+
 .font-size-control {
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
 }
 
 .font-size-slider {
@@ -438,8 +454,15 @@ button:active {
 }
 
 /* Estilos para la pestaña waterfall */
+.waterfall-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 20px;
+}
+
 .waterfall-text-input {
-  margin-bottom: var(--spacing-md);
+  margin-bottom:0;
 }
 
 .custom-text-input {
@@ -447,28 +470,91 @@ button:active {
   padding: var(--spacing-sm);
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius-sm);
-  height: 5rem;
+  height: 2rem;
   background-color: transparent;
   color: var(--text-color);
   resize: vertical;
 }
 
 .waterfall-item {
-  margin-bottom: var(--spacing-md);
-}
-
-.size-label {
-  font-size: 0.8rem;
-  color: var(--text-color-secondary);
-  margin-bottom: 0.125rem;
-  display: inline-block;
+  margin-bottom: 0;
 }
 
 .waterfall-text {
-  padding: var(--spacing-sm);
   border-radius: var(--border-radius-sm);
   color: var(--text-color);
   background-color: transparent;
+  cursor: pointer; /* Asegura que se note la interactividad */
+}
+
+/* Estilos para tooltips */
+.tooltip-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip {
+  position: absolute;
+  background-color: #333;
+  color: #fff;
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-size: 11px;
+  white-space: nowrap;
+  z-index: 1000;
+  pointer-events: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.tooltip-top {
+  bottom: calc(90%);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.tooltip-left {
+  right: calc(100% + 10px);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.tooltip-right {
+  left: calc(100% + 10px);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.tooltip-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.tooltip-arrow-top {
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #333;
+}
+
+.tooltip-arrow-left {
+  right: -5px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid #333;
+}
+
+.tooltip-arrow-right {
+  left: -5px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-right: 5px solid #333;
 }
 
 /* Estilos para el panel de configuración */
@@ -648,6 +734,7 @@ input:checked + .toggle-slider:before {
 /* Ajuste de los input range */
 input[type="range"] {
   -webkit-appearance: none;
+  appearance: none;
   width: 3rem;
   height: 2px;
   background: var(--border-color);
